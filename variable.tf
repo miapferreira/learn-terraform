@@ -1,4 +1,5 @@
 variable "region" {
+  description = "The default region"
   default = "us-east-1"
 }
 
@@ -12,4 +13,20 @@ variable "instance_type" {
 
 variable "key_pair" {
   default = "linux"
+}
+
+variable "availability_zone" {
+  default = "us-east-1a"
+}
+
+variable "volume_type" {
+  description = "The type of volume. Can be 'standard', 'gp2', 'io1', 'sc1', or 'st1'"
+  type        = string
+  default     = "gp2"
+}
+
+variable "disk_size" {
+  description = "The size of the root volume in gigabytes."
+  type        = string
+  default     = "90"
 }
