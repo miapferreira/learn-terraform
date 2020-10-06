@@ -14,7 +14,7 @@ data "aws_ami" "ubuntu" {
   owners = ["099720109477"] # Canonical
 }
 
-resource "aws_instance" "portal" {
+resource "aws_instance" "teste" {
   ami                         = data.aws_ami.ubuntu.id
   instance_type               = "${var.instance_type}"
   key_name                    = "${var.key_pair}"
@@ -27,7 +27,7 @@ resource "aws_instance" "portal" {
   }
 
   tags = {
-    Name = "PORTAL REVENDA"
+    Name = "Teste"
   }
 
   lifecycle {
