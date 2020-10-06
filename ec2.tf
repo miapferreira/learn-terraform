@@ -21,13 +21,14 @@ resource "aws_instance" "teste" {
   availability_zone           = "${var.availability_zone}"
   associate_public_ip_address = true
 
-  root_block_device {                                          #Tamanho padrão de disco
+  root_block_device { #Tamanho padrão de disco
     volume_size = "${var.disk_size}"
     volume_type = "${var.volume_type}"
   }
 
   tags = {
-    Name = "Teste"
+    Name  = "Teste"
+    OWNER = "MichelFerreira"
   }
 
   lifecycle {
