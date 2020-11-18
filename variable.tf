@@ -28,5 +28,5 @@ variable "volume_type" {
 variable "disk_size" {
   description = "The size of the root volume in gigabytes."
   type        = string
-  default     = "90"
+  default     = "10"
 }

@@ -5,8 +5,8 @@ provider "aws" {
 terraform {
   backend "s3" {
     # Lembre de trocar o bucket para o seu, não pode ser o mesmo nome
-    bucket = "curso-udemy-tfstate"
-    key    = "cursoudemy.tfstate"
+    bucket = "nome do bucket"
+    key    = "nome do arquivo.tfstate"
     region = "us-east-1"
   }
 }
