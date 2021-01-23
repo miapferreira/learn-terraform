@@ -8,5 +8,6 @@ terraform {
     bucket = "testemichel8"
     key    = "teste.tfstate"
     region = "us-east-1"
+    encrypt = true      #inserindo criptografia no backend (s3)
   }
 }

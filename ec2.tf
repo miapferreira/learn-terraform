@@ -3,7 +3,7 @@ resource "aws_instance" "WEB" {
   count                       = 1
   instance_type               = var.instance_type
   key_name                    = "${var.key_pair}"
-  availability_zone           = var.availability_zone
+  #availability_zone           = var.availability_zone
   #vpc_security_group          = "${aws_security_group.allow_ssh.id}" #Verificar como declara o security group
   associate_public_ip_address = true
 
