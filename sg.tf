@@ -1,23 +1,23 @@
-resource "aws_vpc" "main" {
+resource "aws_vpc" "default" {
   cidr_block       = "10.0.0.0/16"
   instance_tenancy = "default"
 
   tags = {
-    Name = "SG-Default"
+    Owner = "Michel"
   }
 }
 
 resource "aws_security_group" "allow_ssh" {
   name        = "allow_ssh"
   description = "Allow SSH inbound traffic"
-  vpc_id      = aws_vpc.main.id
+  vpc_id      = aws_vpc.default.id
 
   ingress {
     description = "SSH from VPC"
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [aws_vpc.main.cidr_block]
+    cidr_blocks = [aws_vpc.default.cidr_block]
   }
 
   egress {
@@ -28,6 +28,6 @@ resource "aws_security_group" "allow_ssh" {
   }
 
   tags = {
-    Name = "allow_ssh"
+    Owner = "Michel"
   }
 }
