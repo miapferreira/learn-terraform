@@ -30,3 +30,23 @@ variable "disk_size" {
   type        = string
   default     = "10"
 }
+
+variable "tags" {
+  default = {
+    Name    = "Estudos"
+    Product = "Terraform"
+    Owner   = "Public"
+  }
+}
+
+variable "environment" {
+  description = "The information of environment"
+  type        = string
+  default     = "production"
+}
+
+variable "production" {
+  description = "The information of environment"
+  type        = string
+  default     = true
+}
