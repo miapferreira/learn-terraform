@@ -26,7 +26,7 @@ resource "aws_security_group" "liberando_geral" {
       from_port   = 0
       to_port     = 0
       protocol    = "-1"
-      cidr_blocks = egress.value
+      cidr_blocks = [egress.value]
     }
   }
   tags = var.tags

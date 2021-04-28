@@ -60,5 +60,5 @@ variable "services_ports" {
 variable "services_ip" {
   description = "Allow specifcs IPs "
   type        = list
-  default     = [200.221.157.100/32, 45.172.181.63]
+  default     = ["191.182.237.239/32", "45.172.181.63/32"]
 }

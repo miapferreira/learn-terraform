@@ -1,8 +1,9 @@
-resource "aws_instance" "WEB" {
+resource "aws_instance" "laboratorio" {
   ami = data.aws_ami.ubuntu.id
   #count                       = var.environment == "production" ? 3 : 1 #Inserindo condição para ambiente de produção
   #count         = var.production ? 2 : 1
   #instance_type = count.index < 1 ? "t2.micro" : "t3.medium"
+  vpc_security_group_ids = [aws_security_group.liberando_geral.id]
   key_name      = var.key_pair
   instance_type               = var.instance_type
   associate_public_ip_address = true
