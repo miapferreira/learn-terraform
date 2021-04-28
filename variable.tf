@@ -50,3 +50,15 @@ variable "production" {
   type        = string
   default     = true
 }
+
+variable "services_ports" {
+  description = "Allow specifcs ports "
+  type        = list
+  default     = ["80", "443", "22", "7937"]
+}
+
+variable "services_ip" {
+  description = "Allow specifcs IPs "
+  type        = list
+  default     = [200.221.157.100/32, 45.172.181.63]
+}
