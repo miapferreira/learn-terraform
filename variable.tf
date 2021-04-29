@@ -28,7 +28,7 @@ variable "volume_type" {
 variable "disk_size" {
   description = "The size of the root volume in gigabytes."
   type        = string
-  default     = "10"
+  default     = "11"
 }
 
 variable "tags" {
@@ -60,5 +60,16 @@ variable "services_ports" {
 variable "services_ip" {
   description = "Allow specifcs IPs "
   type        = list
-  default     = ["191.182.237.239/32", "45.172.181.63/32"]
+  default     = ["0.0.0.0/0"]
+}
+
+variable "security_group" {
+  description = "Value of Security group "
+  type        = string
+  default     = "sg-72cadc29"
+}
+
+variable "name" {
+  type    = string
+  default = "michel"
 }

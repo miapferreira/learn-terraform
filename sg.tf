@@ -7,7 +7,7 @@ resource "aws_vpc" "terraform" {
 
 resource "aws_security_group" "liberando_geral" {
   name        = "liberando_geral"
-  description = "Allow SSH inbound traffic"
+  description = "Allow specifics inbound traffic"
   vpc_id      = aws_vpc.terraform.id
 
   dynamic "ingress" {
@@ -26,7 +26,7 @@ resource "aws_security_group" "liberando_geral" {
       from_port   = 0
       to_port     = 0
       protocol    = "-1"
-      cidr_blocks = [egress.value]
+      cidr_blocks = ["0.0.0.0/0"]
     }
   }
   tags = var.tags
